@@ -136,12 +136,12 @@ void ThreadMenyooConfig()
 
 	DWORD _programTick = 0U;
 
-	std::this_thread::sleep_for(std::chrono::seconds(9));
+	scriptWait(9);
 	bool bConfigHasNotBeenRead = true;
 
 	for (;;)
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		scriptWait(1);
 		_programTick++;
 
 		if (_programTick % 30000 == 0 && MenuConfig::bSaveAtIntervals)
@@ -199,7 +199,7 @@ void ThreadRainbowFader()
 			colour.R++;
 			colour.B--;
 		}
-		std::this_thread::sleep_for(std::chrono::milliseconds(20));
+		scriptWait(20);
 	}
 }
 
