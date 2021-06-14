@@ -805,10 +805,6 @@ void GTAmemory::Init()
 	address = MemryScan::PatternScanner::FindPattern("48 85 C0 0F 84 ? ? ? ? 8B 48 50");
 	if (address) memset(reinterpret_cast<void*>(address), 0x90, 24);
 
-	// Bypass is player model allowed to spawn checks
-	address = MemryScan::PatternScanner::FindPattern("48 8B C8 FF 52 30 84 C0 74 05 48");
-	if (address) memset(reinterpret_cast<void*>(address + 0x8), 0x90, 2);
-
 	_SpSnow = SpSnow();
 
 }
